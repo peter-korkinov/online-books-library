@@ -39,11 +39,12 @@ async function onSubmit(event, ctx, reqFunc) {
     const title = formData.get('title');
     const description = formData.get('description');
     const imageUrl = formData.get('imageUrl');
+    const type = formData.get('type');
 
     if (title && description && imageUrl) {
         try {
-            await reqFunc({title, description, imageUrl}, ctx.params.id);
-            ctx.page.redirect('/catalog');
+            await reqFunc({title, description, imageUrl, type}, ctx.params.id);
+            ctx.page.redirect('/home');
         } catch (err) {
             notify('error', err);
         }
