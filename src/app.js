@@ -5,7 +5,7 @@ import {notify} from "./common/notify.js";
 
 import {catalogPage} from "./views/catalog.js";
 import {loginPage} from "./views/login.js";
-// import {registerPage} from "./views/register.js";
+import {registerPage} from "./views/register.js";
 import {guestTemplate, loggedInTemplate} from "./views/navigation.js";
 // import {detailsPage} from "./views/details.js";
 // import {editPage} from "./views/edit.js";
@@ -46,7 +46,7 @@ page(decorateContext)
 page('/home', catalogPage);
 page('/', '/home');
 page('/login', loginPage);
-// page('/register', registerPage);
+page('/register', registerPage);
 // page('/my-profile', myProfilePage);
 // page('/create', createPage);
 // page('/details/:id', loadRecord, detailsPage);

@@ -70,8 +70,8 @@ async function login(email, password) {
     setUserData(userData);
 }
 
-async function register(username, email, password, gender) {
-    const response = await request('/users/register', createOptions('post', {username, email, password, gender}));
+async function register(email, password) {
+    const response = await request('/users/register', createOptions('post', {email, password}));
     const userData = {
         email: response.email,
         id: response._id,
