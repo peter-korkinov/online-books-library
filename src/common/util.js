@@ -5,7 +5,7 @@ function getUserData() {
     return JSON.parse(sessionStorage.getItem('userData'));
 }
 
-function setUserdata(data) {
+function setUserData(data) {
     sessionStorage.setItem('userData', JSON.stringify(data));
 }
 
@@ -44,7 +44,7 @@ async function onSubmit(event, ctx, reqFunc) {
 
 export {
     getUserData,
-    setUserdata,
+    setUserData,
     clearUserData,
     isLogged,
     loadRecord,

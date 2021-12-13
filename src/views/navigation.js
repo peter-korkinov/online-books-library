@@ -2,7 +2,7 @@ import {html} from '/src/lib.js';
 
 
 const loggedInTemplate = (email, onLogout) => html`
-    <a href="/catalog">Dashboard</a>
+    <a href="/home">Dashboard</a>
     <div id="user">
         <span>Welcome, ${email}</span>
         <a class="button" href="/my-books">My Books</a>
@@ -12,7 +12,7 @@ const loggedInTemplate = (email, onLogout) => html`
 `;
 
 const guestTemplate = () => html`
-    <a href="/catalog">Dashboard</a>
+    <a href="/home">Dashboard</a>
     <div id="guest">
         <a class="button" href="/login">Login</a>
         <a class="button" href="/register">Register</a>

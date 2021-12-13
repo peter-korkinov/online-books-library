@@ -4,7 +4,7 @@ import {logout} from "./api/data.js";
 import {notify} from "./common/notify.js";
 
 import {catalogPage} from "./views/catalog.js";
-// import {loginPage} from "./views/login.js";
+import {loginPage} from "./views/login.js";
 // import {registerPage} from "./views/register.js";
 import {guestTemplate, loggedInTemplate} from "./views/navigation.js";
 // import {detailsPage} from "./views/details.js";
@@ -16,7 +16,7 @@ import {guestTemplate, loggedInTemplate} from "./views/navigation.js";
 
 function updateNavBar() {
     if (isLogged()) {
-        render(loggedInTemplate(getUserData().username, onLogout), navBar);
+        render(loggedInTemplate(getUserData().email, onLogout), navBar);
     } else {
         render(guestTemplate(), navBar);
     }
@@ -45,7 +45,7 @@ const root = document.querySelector('main');
 page(decorateContext)
 page('/home', catalogPage);
 page('/', '/home');
-// page('/login', loginPage);
+page('/login', loginPage);
 // page('/register', registerPage);
 // page('/my-profile', myProfilePage);
 // page('/create', createPage);

@@ -1,4 +1,4 @@
-import { getUserData, setUserdata, clearUserData } from "../common/util.js";
+import { getUserData, setUserData, clearUserData } from "../common/util.js";
 
 const host = 'http://localhost:3030';
 
@@ -63,25 +63,21 @@ async function del(url) {
 async function login(email, password) {
     const response = await request('/users/login', createOptions('post', {email, password}));
     const userData = {
-        username: response.username,
         email: response.email,
         id: response._id,
-        gender: response.gender,
         token: response.accessToken
-    }
-    setUserdata(userData);
+    };
+    setUserData(userData);
 }
 
 async function register(username, email, password, gender) {
     const response = await request('/users/register', createOptions('post', {username, email, password, gender}));
     const userData = {
-        username: response.username,
         email: response.email,
         id: response._id,
-        gender: response.gender,
         token: response.accessToken
     }
-    setUserdata(userData);
+    setUserData(userData);
 }
 
 async function logout() {
