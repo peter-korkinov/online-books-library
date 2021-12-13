@@ -28,7 +28,9 @@ async function loadLikes(ctx, next) {
 }
 
 async function isLiked(ctx, next) {
-    ctx.isLikedPromise = isRecordIdLikedByUSerId(ctx.params.id, getUserData().id);
+    if (isLogged()) {
+        ctx.isLikedPromise = isRecordIdLikedByUSerId(ctx.params.id, getUserData().id);
+    }
     next();
 }
 
