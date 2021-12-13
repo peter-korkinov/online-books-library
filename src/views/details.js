@@ -64,7 +64,7 @@ const detailsTemplate = (record, onDelete, onLike) => html`
                             <button class="button" value="${record._id}" @click=${onDelete}>Delete</button>
                     `
                     : html`
-                            ${record.isLiked ? null : html`<button class="button" value="${record._id}" @click=${onLike}>Like</button>`}                            
+                            ${!isLogged() || record.isLiked ? null : html`<button class="button" value="${record._id}" @click=${onLike}>Like</button>`}                            
                     `
                 }
                 <div class="likes">
