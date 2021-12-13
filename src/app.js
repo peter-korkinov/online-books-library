@@ -1,6 +1,6 @@
 import {isLogged, loadRecord, getUserData, loadLikes, isLiked} from "./common/util.js";
 import { page, render } from "./lib.js";
-import {isRecordIdLikedByUSerId, logout} from "./api/data.js";
+import {logout} from "./api/data.js";
 import {notify} from "./common/notify.js";
 
 import {catalogPage} from "./views/catalog.js";
@@ -10,8 +10,7 @@ import {guestTemplate, loggedInTemplate} from "./views/navigation.js";
 import {detailsPage} from "./views/details.js";
 import {editPage} from "./views/edit.js";
 import {createPage} from "./views/create.js";
-// // import {homePage} from "./views/home.js";
-// // import {myProfilePage} from "./views/profile.js";
+import {myBooksPage} from "./views/my-records.js";
 
 
 function updateNavBar() {
@@ -47,7 +46,7 @@ page('/home', catalogPage);
 page('/', '/home');
 page('/login', loginPage);
 page('/register', registerPage);
-// page('/my-profile', myProfilePage);
+page('/my-books', myBooksPage);
 page('/create', createPage);
 page('/details/:id', loadLikes, isLiked, loadRecord, detailsPage);
 page('/edit/:id', loadRecord, editPage);

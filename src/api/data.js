@@ -8,7 +8,7 @@ const logout = api.logout;
 const endpoints = {
     allRecords: '/data/books?sortBy=_createdOn%20desc',
     recordById: '/data/books/',
-    recordsOfUser: (userId) => `/data/memes?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`,
+    recordsOfUser: (userId) => `/data/books?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`,
     create: '/data/books',
     edit: '/data/books/',
     delete: '/data/books/',
