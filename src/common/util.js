@@ -1,4 +1,4 @@
-import {getRecordById} from "../api/data.js";
+import {getLikesOfRecordById, getRecordById, isRecordIdLikedByUSerId} from "../api/data.js";
 import {notify} from "./notify.js";
 
 function getUserData() {
@@ -19,6 +19,16 @@ function isLogged() {
 
 async function loadRecord(ctx, next) {
     ctx.recordPromise = getRecordById(ctx.params.id);
+    next();
+}
+
+async function loadLikes(ctx, next) {
+    ctx.likesPromise = getLikesOfRecordById(ctx.params.id);
+    next();
+}
+
+async function isLiked(ctx, next) {
+    ctx.isLikedPromise = isRecordIdLikedByUSerId(ctx.params.id, getUserData().id);
     next();
 }
 
@@ -48,5 +58,7 @@ export {
     clearUserData,
     isLogged,
     loadRecord,
+    loadLikes,
+    isLiked,
     onSubmit
 };

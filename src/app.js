@@ -1,13 +1,13 @@
-import {isLogged, loadRecord, getUserData} from "./common/util.js";
+import {isLogged, loadRecord, getUserData, loadLikes, isLiked} from "./common/util.js";
 import { page, render } from "./lib.js";
-import {logout} from "./api/data.js";
+import {isRecordIdLikedByUSerId, logout} from "./api/data.js";
 import {notify} from "./common/notify.js";
 
 import {catalogPage} from "./views/catalog.js";
 import {loginPage} from "./views/login.js";
 import {registerPage} from "./views/register.js";
 import {guestTemplate, loggedInTemplate} from "./views/navigation.js";
-// import {detailsPage} from "./views/details.js";
+import {detailsPage} from "./views/details.js";
 // import {editPage} from "./views/edit.js";
 // import {createPage} from "./views/create.js";
 // // import {homePage} from "./views/home.js";
@@ -49,7 +49,7 @@ page('/login', loginPage);
 page('/register', registerPage);
 // page('/my-profile', myProfilePage);
 // page('/create', createPage);
-// page('/details/:id', loadRecord, detailsPage);
+page('/details/:id', loadLikes, isLiked, loadRecord, detailsPage);
 // page('/edit/:id', loadRecord, editPage);
 
 updateNavBar();
