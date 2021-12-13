@@ -42,7 +42,7 @@ const createTemplate = (onSubmit, ctx) => html`
                                 <option value="Fiction">Fiction</option>
                                 <option value="Romance">Romance</option>
                                 <option value="Mistery">Mistery</option>
-                                <option value="Classic">Clasic</option>
+                                <option value="Classic">Classic</option>
                                 <option value="Other">Other</option>
                             </select>
                         </span>

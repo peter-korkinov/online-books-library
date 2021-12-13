@@ -60,7 +60,7 @@ const detailsTemplate = (record, onDelete, onLike) => html`
                 ${
                     record.isOwner
                     ? html`
-                            <a class="button" href="${`edit/${record._id}`}">Edit</a>
+                            <a class="button" href=${`/edit/${record._id}`}>Edit</a>
                             <button class="button" value="${record._id}" @click=${onDelete}>Delete</button>
                     `
                     : html`

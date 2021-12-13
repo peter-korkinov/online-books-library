@@ -8,7 +8,7 @@ import {loginPage} from "./views/login.js";
 import {registerPage} from "./views/register.js";
 import {guestTemplate, loggedInTemplate} from "./views/navigation.js";
 import {detailsPage} from "./views/details.js";
-// import {editPage} from "./views/edit.js";
+import {editPage} from "./views/edit.js";
 import {createPage} from "./views/create.js";
 // // import {homePage} from "./views/home.js";
 // // import {myProfilePage} from "./views/profile.js";
@@ -50,7 +50,7 @@ page('/register', registerPage);
 // page('/my-profile', myProfilePage);
 page('/create', createPage);
 page('/details/:id', loadLikes, isLiked, loadRecord, detailsPage);
-// page('/edit/:id', loadRecord, editPage);
+page('/edit/:id', loadRecord, editPage);
 
 updateNavBar();
 page.start();
