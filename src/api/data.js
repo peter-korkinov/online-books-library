@@ -6,7 +6,7 @@ const register = api.register;
 const logout = api.logout;
 
 const endpoints = {
-    allRecords: '/data/memes?sortBy=_createdOn%20desc',
+    allRecords: '/data/books?sortBy=_createdOn%20desc',
     recordById: '/data/memes/',
     recordsOfUser: (userId) => `/data/memes?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`,
     create: '/data/memes',
